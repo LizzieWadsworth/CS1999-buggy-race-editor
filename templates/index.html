@@ -3,7 +3,7 @@
 {% block content %}
 
   <h1>
-    My buggy editor
+    Lizzie's buggy editor
   </h1>
 
   <div class="spacer">
@@ -19,10 +19,31 @@
     <strong><a href="{{ server_url }}">race server</a></strong> and enter your
     buggy into the next race.
   </p>
-  <p>
+  <p id ="banana">
     Remember that if your data is not accepted by the race server, your buggy
     will be disqualified from that race... so make sure you program your editor
     correctly.
   </p>
+  <script>
+	  // this is a comment on one line 
+	  /* this is a comment
+	  which spans multiple lines */
+	  // alert("hello Andreea");
+	  console.log("hello I am in the console");
+	  let banana = document.getElementById("banana");
+	  // banana.innerHTML = "BOO"
+	  let payload = "I am <em>impressed</em>";
+	  // let tid = window.setTimeout( function(){ banana.innerHTML = payload; }, 2000 );
+	  var xhr = new XMLHttpRequest();
+	  xhr.onload = function() {
+	  	console.log(this.response);
+	  	banana.innerHTML = this.response
+	  }
+	  xhr.open("GET", "andreea");
+	  xhr.responseType = "text";
+	  console.log("about to send");
+	  xhr.send();
+	  console.log("hello I am in the console");
+  </script>
 
 {% endblock %}

@@ -28,7 +28,9 @@ connection.execute("""
     qty_wheels            INTEGER DEFAULT 4,
     flag_color            VARCHAR(20),
     flag_color_secondary  VARCHAR(20),
-    flag_pattern          VARCHAR(20)
+    flag_pattern          VARCHAR(20),
+    power_type            VARCHAR(20),
+    antibiotic            INTEGER DEFAULT 0
   )
 
 """)

@@ -4,10 +4,29 @@
 
   <h1>Make buggy</h1>
 
+  <p>
+    {{ msg }}
+
+  </p>
+
   <form action="/new" method="post">
+    <p>
     <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
+    <input type="number" min=4 value={{buggy['qty_wheels']}} name="qty_wheels" />
+    </p>
+    <p>
+    <label for="flag_color">Flag colour:</label>
+    <input type="color" name="flag_color" />
+    <label for="power_type">Power:</label>
+    <select name="power_type">
+      <option {% if buggy['power_type'] == 'hamster' %} selected {% endif %} value='hamster'>Hamster</option>
+      <option {% if buggy['power_type'] == 'solar' %} selected {% endif %} value='solar'>Solar</option>
+    </select>
+    <label for="antibiotic">Antibiotic?</label>
+    <input type="checkbox" name="antibiotic" id ="antibiotic" {% if buggy['antibiotic'] == 1 %} checked {% endif %}/>
+
     <input type="submit" class="button">
+    </p>
   </form>
 
   <p>

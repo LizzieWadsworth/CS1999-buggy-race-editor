@@ -11,6 +11,12 @@
     <tr>
       <td>Wheels:</td> <td> {{ buggy['qty_wheels'] }} </td>
     </tr>
+    <tr>
+      <td>Flag colour:</td> <td> {{ buggy['flag_color'] }} </td>
+    </tr>
+    <tr>
+      <td>Antibiotic:</td> <td> {% if buggy['antibiotic'] == 1 %} True {% else %} False {% endif %} </td>
+    </tr>
   </table>
 
   <p>
